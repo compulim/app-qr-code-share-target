@@ -12,5 +12,16 @@
     "start": "concurrently --kill-others \"npm run start:*\"",
     "start:esbuild": "npm run build:esbuild -- --servedir=./public",
     "start:typescript": "npm run build:typescript -- --watch"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "concurrently": "^8.2.0",
+    "esbuild": "^0.18.8",
+    "typescript": "^5.1.3"
   }
 }
