@@ -4,7 +4,7 @@ const App = () => {
   const isPWA = !matchMedia('(display-mode: browser)').matches;
   const params = new URLSearchParams(location.search);
 
-  const targetURL = params.get('url');
+  const targetURL = params.get('url') || params.get('text') || params.get('title');
 
   return targetURL ? (
     <QRCodeCanvas text={targetURL} />
