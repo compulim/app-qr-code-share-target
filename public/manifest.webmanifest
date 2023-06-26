@@ -3,18 +3,18 @@
   "name": "Share as QR Code",
   "icons": [
     {
-      "src": "/static/images/icons-192.png",
+      "src": "static/images/icons-192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/static/images/icons-512.png",
+      "src": "static/images/icons-512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
   "share_target": {
-    "action": "/",
+    "action": "./",
     "method": "GET",
     "enctype": "application/x-www-form-urlencoded",
     "params": {
@@ -22,5 +22,5 @@
     }
   },
   "short_name": "QR Code",
-  "start_url": "/"
+  "start_url": "./"
 }
