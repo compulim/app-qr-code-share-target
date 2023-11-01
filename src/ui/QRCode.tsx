@@ -13,6 +13,7 @@ type Props = { label?: string; text: string };
 
 const QRCodeCanvas = ({ label, text }: Props) => {
   const [error, setError] = useState<true | undefined>();
+  const [imageSource, setImageSource] = useState<string>();
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -32,6 +33,8 @@ const QRCodeCanvas = ({ label, text }: Props) => {
       } catch (error) {
         setError(true);
       }
+
+      setImageSource(canvas.toDataURL('image/png'));
     })();
 
     return () => abortController.abort();
@@ -45,7 +48,10 @@ const QRCodeCanvas = ({ label, text }: Props) => {
         <div className="qr-code-canvas__error">Failed to render QR code.</div>
       ) : (
         <div className="qr-code-canvas__box">
-          <canvas className="qr-code-canvas__canvas" ref={canvasRef} />
+          <div className="qr-code-canvas__twins">
+            <canvas className="qr-code-canvas__canvas" ref={canvasRef} />
+            {imageSource && <img className="qr-code-canvas__image" src={imageSource} title={label} />}
+          </div>
           <caption className="qr-code-canvas__caption" title={label}>
             {label}
           </caption>

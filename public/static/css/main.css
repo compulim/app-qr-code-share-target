@@ -39,13 +39,28 @@ body {
   width: 320px;
 }
 
-.qr-code-canvas__canvas {
+.qr-code-canvas__twins {
   flex: 1;
+  height: 100% !important;
+  image-rendering: pixelated;
   object-fit: contain;
   overflow: hidden;
+  position: relative;
+  width: 100% !important;
+}
+
+.qr-code-canvas__canvas,
+.qr-code-canvas__image {
+  object-fit: contain;
   height: 100% !important;
   image-rendering: pixelated;
   width: 100% !important;
+}
+
+.qr-code-canvas__image {
+  left: 0;
+  position: absolute;
+  top: 0;
 }
 
 .qr-code-canvas__caption {
